@@ -19,3 +19,13 @@ class MainGame:
 
     elif int(game_number) == 3:
         CurrencyRouletteGame.play(difficulty)
+
+
+#print result and add score
+    if status:
+        add_score(game_difficulty,user_name)
+        print("Great job , you won")
+    else:
+        print("You lost , try again")
+
+    p_continue = input("do you want to play again y or n ?")

@@ -43,8 +43,8 @@ def load_game():
         else:
             print("you inserted illegal value , please insert new value! " + "\n")
 
-    except:
-        print("menu except:error")
+    except ValueError:
+        print("menu ValueError")
 
 
 # find if the number is in the right range
@@ -57,7 +57,7 @@ def number_in_range(user_val, max_val, min_val, name):
             return False
         else:
             return True
-    except:
+    except ValueError:
         print("you inserted illegal " + name + " value , please insert new value! \n")
         return False
 
@@ -77,7 +77,7 @@ def choose_level():
         is_difficulty_in_range = number_in_range(difficulty, max_difficulty, min_difficulty, "difficulty")
         if is_difficulty_in_range:
             return difficulty
-    except:
+    except ValueError:
         print("problem in game_difficulty section")
     finally:
         return difficulty

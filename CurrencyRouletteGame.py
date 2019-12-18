@@ -31,8 +31,8 @@ def get_money_interval(difficult):
             "interval": interval
         }
         return dict_currency
-    except:
-        print("error in CRM get_money_interval")
+    except ValueError:
+        print("ValueError: in get_money_interval")
 
 
 def get_guess_from_user(random_number):
@@ -46,8 +46,8 @@ def get_guess_from_user(random_number):
     except ValueError:
         print(" you must insert number")
         return 0
-    except:
-        print("error in get_guess_from_user")
+    except ValueError:
+        print("ValueError: in get_guess_from_user")
 
 
 def play(difficult):
@@ -64,10 +64,10 @@ def play(difficult):
         if int(exchanged_total_amount) - int(interval) <= int(user_guess) <= int(exchanged_total_amount) + \
                 int(interval):
             print("Great job , you won")
-
+            return True
         else:
             print("You lost , try again")
+            return False
 
-
-    except:
-        print("error in paly")
+    except ValueError:
+        print("ValueError: in Play")

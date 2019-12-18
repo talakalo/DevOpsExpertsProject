@@ -52,8 +52,10 @@ def play(difficulty):
         # print result
         if compared_results:
             print("Great job , you won")
+            return True
         else:
             print("You lost , try again")
+            return False
 
-    except:
+    except ValueError:
         print("error in play")

@@ -1,7 +1,14 @@
+class Score:
+    def __init__(self, difficult, name):
+        self.DIFFICULT = difficult
+        self.SCORES_FILE_NAME = name
+
+
 def add_score(difficult, name):
+
     try:
-        points_of_winning = (int(difficult)*3)+5
-        file_name = name+".txt"
+        points_of_winning = (int(difficult) * 3) + 5
+        file_name = name + ".txt"
 
         file_open = open(file_name, 'a+')
         file_open.close()
@@ -19,6 +26,5 @@ def add_score(difficult, name):
         file_open.write(str(l_line))
         file_open.close()
 
-    except:
-        print("error in add_score")
-
+    except IOError:
+        print("IOError: in add_score")
